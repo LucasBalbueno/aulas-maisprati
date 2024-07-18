@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, NavigationType } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 
 import { Page1 } from './components/Page1'
 import { Page2 } from './components/Page2'
@@ -15,9 +15,9 @@ function App() {
         <Header />
         <Navigation />
           <Routes>
-            <Route path='/' Component={Page1} />
-            <Route path='/page2' Component={Page2} />
-            <Route path='/page3' Component={Page3} />
+            <Route path='/' element={<Page1 />} />
+            <Route path='/page2' element={<Navigate to="/" />}/>
+            <Route path='/page3' element={<Page3 />} />
           </Routes>
         <Footer />
       </Router>
